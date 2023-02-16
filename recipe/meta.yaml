@@ -23,7 +23,7 @@ requirements:
   run:
     - gpy
     - scipy
-    - numpy
+    - numpy <=1.23.5
     - matplotlib-base >=3.0
     - python >=3.5
     - gpy >=1.10.0
