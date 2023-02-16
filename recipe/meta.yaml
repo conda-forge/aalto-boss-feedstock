@@ -1,5 +1,5 @@
 {% set name = "aalto-boss" %}
-{% set version = "1.6.3" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aalto-boss-{{ version }}.tar.gz
-  sha256: 7ba21fe7325226f5653f23bb36e0ccd0f5875e84faf630c93765f8798df639bd
+  sha256: 8f88a20e4686c1d1d9b387915ca738528c48451f561d091189427d49eac4df08
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
   run:
     - gpy
     - scipy
-    - numpy
+    - numpy <=1.23.5
     - matplotlib-base >=3.0
     - python >=3.5
     - gpy >=1.10.0
