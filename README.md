@@ -1,11 +1,11 @@
-About aalto-boss
-================
+About aalto-boss-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/aalto-boss-feedstock/blob/main/LICENSE.txt)
 
 Home: https://gitlab.com/cest-group/boss
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/aalto-boss-feedstock/blob/main/LICENSE.txt)
 
 Summary: Bayesian optimization structure search
 
