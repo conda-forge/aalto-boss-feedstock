@@ -1,5 +1,5 @@
 {% set name = "aalto-boss" %}
-{% set version = "1.7.1" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aalto-boss-{{ version }}.tar.gz
-  sha256: 8c9ab4165ff73872bdddf0eef1d12d3d8562c7ebfe55841584a54e0a01909452
+  sha256: 65a1829488bc0db53e3f28b5f242c50c7193c9b966cb7c5ea70aaa5cd34e95f0
 
 build:
   number: 0
