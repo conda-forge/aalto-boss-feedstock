@@ -10,29 +10,25 @@ source:
   sha256: b4cea327b234b36b2fc7d9736941ad4df7163e0d124e16fc51d0033fbfbba394
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - boss=boss.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python >=3.5
   run:
-    - gpy
-    - scipy
+    - python >=3.7
     - numpy <=1.23.5
+    - gpy
     - matplotlib-base >=3.0
-    - python >=3.5
-    - gpy >=1.10.0
-    - cython
 
 test:
   imports:
     - boss
-    - boss.bo
   commands:
     - pip check
     - boss --help
@@ -41,17 +37,9 @@ test:
 
 about:
   home: https://gitlab.com/cest-group/boss
-  license: Apache-2.0
-  license_family: OTHER
-  license_file: LICENSE.txt
   summary: Bayesian optimization structure search
-  description: |
-    Bayesian Optimization Structure Search (BOSS) is an active machine 
-    learning technique for accelerated global exploration of energy and 
-    property phase space. It is designed to facilitate machine learning 
-    in computational and experimental natural sciences.
-  doc_url: https://cest-group.gitlab.io/boss/
-  dev_url: https://gitlab.com/cest-group/boss
+  license: Apache-2.0
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
