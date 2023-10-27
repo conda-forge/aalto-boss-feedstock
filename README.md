@@ -9,16 +9,6 @@ Package license: Apache-2.0
 
 Summary: Bayesian optimization structure search
 
-Development: https://gitlab.com/cest-group/boss
-
-Documentation: https://cest-group.gitlab.io/boss/
-
-Bayesian Optimization Structure Search (BOSS) is an active machine
-learning technique for accelerated global exploration of energy and
-property phase space. It is designed to facilitate machine learning
-in computational and experimental natural sciences.
-
-
 Current build status
 ====================
 
