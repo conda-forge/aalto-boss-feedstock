@@ -19,6 +19,7 @@ build:
 requirements:
   host:
     - python >=3.7
+    - setuptools
     - pip
   run:
     - scipy >=1.8
