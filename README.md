@@ -40,31 +40,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `aalto-boss` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install aalto-boss
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install aalto-boss
 ```
 
-It is possible to list all of the versions of `aalto-boss` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add aalto-boss
+# for installing globally
+pixi global install aalto-boss
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `aalto-boss` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search aalto-boss --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search aalto-boss --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search aalto-boss --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -76,6 +118,8 @@ mamba repoquery whoneeds aalto-boss --channel conda-forge
 # List dependencies of `aalto-boss`:
 mamba repoquery depends aalto-boss --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
