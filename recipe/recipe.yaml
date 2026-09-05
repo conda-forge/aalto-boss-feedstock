@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: aalto-boss
+  version: "1.15.2"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: d1d4fddb1850cb5b4fcbce2904ac977e7eb3a76d75d6ee1a041d4217136c1266
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - boss=boss.__main__:main
+
+requirements:
+  host:
+    - python 3.10.*
+    - setuptools
+    - pip
+  run:
+    - scipy >=1.8
+    - python >=${{ python_min }}
+    - numpy >=1.20
+    - gpy >=1.13.1
+    - scipy <1.12.0,>=1.3.0
+    - matplotlib-base >=3.5
+
+tests:
+  - python:
+      imports:
+        - boss
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - cython
+        - python ${{ python_min }}.*
+    script:
+      - boss --help
+
+about:
+  summary: Bayesian optimization structure search
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://gitlab.com/cest-group/boss
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
