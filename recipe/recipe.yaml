@@ -3,7 +3,6 @@ schema_version: 1
 context:
   name: aalto-boss
   version: "1.15.2"
-  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -23,7 +22,7 @@ build:
 
 requirements:
   host:
-    - python 3.10.*
+    - python ${{ python_min }}.*
     - setuptools
     - pip
   run:
@@ -39,7 +38,9 @@ tests:
       imports:
         - boss
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
   - requirements:
       run:
         - pip
